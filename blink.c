@@ -231,6 +231,10 @@ main(int argc, char *argv[]) {
 	case 'n':
 		/* set RGB color now */
 		rgb = parse_color(argv[optind]);
+		if (rgb < 0) {
+			error("invalid color");
+			return 1;
+		}
 
 		buf[2] = R(rgb);
 		buf[3] = G(rgb);
