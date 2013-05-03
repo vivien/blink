@@ -1,7 +1,7 @@
-CFLAGS += -Wall
+CFLAGS+=-Wall
+TARGET=blink
 
-blink: blink.c
-	$(CC) $(CFLAGS) -o blink blink.c
+all: $(TARGET)
 
 clean:
-	rm -f blink
+	rm -f $(TARGET)
