@@ -167,7 +167,7 @@ main(int argc, char *argv[]) {
 	int i;
 	int c;
 
-	while ((c = getopt(argc, argv, "hc")) != -1) {
+	while (c = getopt(argc, argv, "hc"), c != -1) {
 		switch (c) {
 		case 'h':
 			printf(USAGE "\n" USAGE_OPTIONS "\nCommands:\n");
@@ -185,7 +185,7 @@ main(int argc, char *argv[]) {
 		}
 	}
 
-	if ((argr = argc - optind) == 0 || strlen(argv[optind]) != 1) {
+	if (argr = argc - optind, argr == 0 || strlen(argv[optind]) != 1) {
 		error("Put colors! Try 'blink -h' for more information.");
 		return 1;
 	}
